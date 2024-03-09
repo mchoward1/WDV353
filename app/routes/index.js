@@ -37,4 +37,13 @@ router.put('/:id', (req,res) => {
     });
 });
 
+router.delete('/:id', (req,res) => {
+    const {id} = req.params;
+    res.status(200).json({
+        message: 'DELETE by ID from /api',
+        id,
+        metadata: {hostname: req.hostname, method: req.method},
+    });
+});
+
 module.exports = router;
